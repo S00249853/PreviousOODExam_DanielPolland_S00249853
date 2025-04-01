@@ -12,5 +12,10 @@ namespace ExamPaper2024OOD
         public DateTime BookingsDate { get; set; }
         public int NumberOfParticipants { get; set; }
         public virtual Customer Customer { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Customer.Name} ({Customer.ContactNumber}) - Party of {NumberOfParticipants}";
+        }
     }
 }

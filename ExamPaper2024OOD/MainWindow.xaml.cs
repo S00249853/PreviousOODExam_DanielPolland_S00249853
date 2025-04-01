@@ -20,13 +20,28 @@ namespace ExamPaper2024OOD
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Customer c1 = new Customer() { Name = "Tom Jones", ContactNumber = "086-123 4567" };
-        //Customer c2 = new Customer() { Name = "Mary Smith", ContactNumber = "086 546 3214" };
-        //Customer c3 = new Customer() { Name = "Jo Doyle", ContactNumber = "087 1221 222" };
+        RestaurantData db;
+        int Capacity = 40;
+        int Bookings;
+        int Avaliable;
         public MainWindow()
         {
             InitializeComponent();
          
+            db = new RestaurantData();
+
+            var query = from Booking b in db.Bookings
+                        where b.BookingsDate == dbxShow.DisplayDate
+                        select b;
+            
+            lbxBookings.ItemsSource = query;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            tblkAvaliable.Text = "Avaliable " + Avaliable;
+            tblkBookings.Text = "Bookings " + Bookings;
+            tblkCapacity.Text = "Capacity " + Capacity;
         }
     }
 }
