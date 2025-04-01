@@ -26,6 +26,7 @@ namespace ExamPaper2024OOD
         public MainWindow()
         {
             InitializeComponent();
+            string s;
         }
     }
 }
