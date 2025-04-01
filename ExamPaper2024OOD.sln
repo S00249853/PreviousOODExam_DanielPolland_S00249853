@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamPaper2024OOD", "ExamPaper2024OOD\ExamPaper2024OOD.csproj", "{1160FAC3-1F39-4B2C-8F7D-B23573AB0F88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{87539DEF-917B-4FE9-803B-F451EDEFB543}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1160FAC3-1F39-4B2C-8F7D-B23573AB0F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1160FAC3-1F39-4B2C-8F7D-B23573AB0F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1160FAC3-1F39-4B2C-8F7D-B23573AB0F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87539DEF-917B-4FE9-803B-F451EDEFB543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87539DEF-917B-4FE9-803B-F451EDEFB543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87539DEF-917B-4FE9-803B-F451EDEFB543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87539DEF-917B-4FE9-803B-F451EDEFB543}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,9 +8,9 @@ namespace ExamPaper2024OOD
 {
     public class Customer
     {
-        public int CustomerId;
-        public string Name;
-        public string ContactNumber;
-        public List<Booking> Bookings;
+        public int CustomerID { get; set; }
+        public string Name { get; set; }
+        public string ContactNumber { get; set; }
+        public virtual List<Booking> Bookings { get; set; }
     }
 }

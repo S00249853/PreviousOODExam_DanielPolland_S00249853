@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Booking Details" VerticalAlignment="Top" Height="51" Width="253" FontSize="35" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.285" AngleX="0.009"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.453" X="0.007"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <DatePicker x:Name="dbxDate" HorizontalAlignment="Left" Margin="281,24,0,0" VerticalAlignment="Top"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,68,279,99"/>
+        <TextBlock HorizontalAlignment="Left" Margin="533,10,0,0" TextWrapping="Wrap" Text="New Booking" VerticalAlignment="Top" FontSize="30"/>
+        <DatePicker x:Name="dbxDecision" HorizontalAlignment="Left" Margin="571,81,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="dbxCustomerNo" HorizontalAlignment="Left" Margin="571,128,0,0" TextWrapping="Wrap" Text="Number of Customers" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="tbxCustomerName" HorizontalAlignment="Left" Margin="571,169,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="tbxCustomerContact" HorizontalAlignment="Left" Margin="571,0,0,0" TextWrapping="Wrap" Text="Contact Number" VerticalAlignment="Center" Width="139"/>
+        <Button x:Name="bttnSearch" Content="Customer Search" HorizontalAlignment="Left" Margin="602,251,0,0" VerticalAlignment="Top" Width="142"/>
+        <Button x:Name="bttnDelete" Content="Delete Booking" HorizontalAlignment="Left" Margin="388,372,0,0" VerticalAlignment="Top" Width="121"/>
+
     </Grid>
 </Window>

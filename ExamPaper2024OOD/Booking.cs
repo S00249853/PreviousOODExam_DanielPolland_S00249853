@@ -8,9 +8,9 @@ namespace ExamPaper2024OOD
 {
     public class Booking
     {
-        public int BookingId;
-        public DateTime BookingsDate;
-        public int NumberOfParticipants;
-        public Customer Customer;
+        public int BookingID { get; set; }
+        public DateTime BookingsDate { get; set; }
+        public int NumberOfParticipants { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }
