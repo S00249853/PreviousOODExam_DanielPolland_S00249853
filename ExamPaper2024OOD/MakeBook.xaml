@@ -1,0 +1,25 @@
+﻿<Window x:Class="ExamPaper2024OOD.MakeBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamPaper2024OOD"
+        mc:Ignorable="d"
+        Title="MakeBook" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="2,15,0,0" TextWrapping="Wrap" Text="Matching Customers" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="382,16,0,0" TextWrapping="Wrap" Text="Create New Customer" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbxCustomers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="11,49,433,142" Grid.Column="1" SelectionChanged="lbxCustomers_SelectionChanged"/>
+        <TextBox x:Name="tbxName" Grid.Column="1" HorizontalAlignment="Left" Margin="394,66,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbxContact" Grid.Column="1" HorizontalAlignment="Left" Margin="395,108,0,0" TextWrapping="Wrap" Text="Contact Number" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tblkDate" Grid.Column="1" HorizontalAlignment="Left" Margin="388,152,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkNo" Grid.Column="1" HorizontalAlignment="Left" Margin="391,194,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="bttnCreate" Grid.Column="1" Content="Create Booking" HorizontalAlignment="Left" Margin="516,344,0,0" VerticalAlignment="Top" Click="bttnCreate_Click"/>
+
+    </Grid>
+</Window>

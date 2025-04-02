@@ -22,10 +22,10 @@
         <ListBox x:Name="lbxBookings" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,68,279,99"/>
         <TextBlock HorizontalAlignment="Left" Margin="533,10,0,0" TextWrapping="Wrap" Text="New Booking" VerticalAlignment="Top" FontSize="30"/>
         <DatePicker x:Name="dbxMake" HorizontalAlignment="Left" Margin="571,81,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="dbxCustomerNo" HorizontalAlignment="Left" Margin="571,128,0,0" TextWrapping="Wrap" Text="Number of Customers" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="tbxCustomerNo" HorizontalAlignment="Left" Margin="571,128,0,0" TextWrapping="Wrap" Text="Number of Customers" VerticalAlignment="Top" Width="139"/>
         <TextBox x:Name="tbxCustomerName" HorizontalAlignment="Left" Margin="571,169,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Width="139"/>
         <TextBox x:Name="tbxCustomerContact" HorizontalAlignment="Left" Margin="571,0,0,0" TextWrapping="Wrap" Text="Contact Number" VerticalAlignment="Center" Width="139"/>
-        <Button x:Name="bttnSearch" Content="Customer Search" HorizontalAlignment="Left" Margin="602,251,0,0" VerticalAlignment="Top" Width="142"/>
+        <Button x:Name="bttnSearch" Content="Customer Search" HorizontalAlignment="Left" Margin="602,251,0,0" VerticalAlignment="Top" Width="142" Click="bttnSearch_Click"/>
         <Button x:Name="bttnDelete" Content="Delete Booking" HorizontalAlignment="Left" Margin="388,372,0,0" VerticalAlignment="Top" Width="121"/>
         <TextBlock x:Name="tblkCapacity" HorizontalAlignment="Left" Margin="22,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="tblkBookings" HorizontalAlignment="Left" Margin="137,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>

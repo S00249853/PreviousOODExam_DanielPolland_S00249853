@@ -24,6 +24,11 @@ namespace ExamPaper2024OOD
         int Capacity = 40;
         int Bookings;
         int Avaliable;
+
+        public string name;
+        public string contact;
+        public int no;
+        public DateTime date;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +39,10 @@ namespace ExamPaper2024OOD
                         where b.BookingsDate == dbxShow.DisplayDate
                         select b;
             
-            lbxBookings.ItemsSource = query;
+            lbxBookings.ItemsSource = query.ToList();
+
+            Bookings = db.Bookings.Count();
+            Avaliable = Capacity - Bookings;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -42,6 +50,20 @@ namespace ExamPaper2024OOD
             tblkAvaliable.Text = "Avaliable " + Avaliable;
             tblkBookings.Text = "Bookings " + Bookings;
             tblkCapacity.Text = "Capacity " + Capacity;
+        }
+
+        private void bttnSearch_Click(object sender, RoutedEventArgs e)
+        {
+           if( int.TryParse(tbxCustomerNo.Text, out no))
+            if (dbxMake.DisplayDate != null  )
+            {
+                MakeBook book = new MakeBook();
+                book.Owner = this;
+                name = tbxCustomerName.Text;
+                contact = tbxCustomerContact.Text;
+                date = dbxMake.DisplayDate;
+                book.ShowDialog();
+            }
         }
     }
 }
