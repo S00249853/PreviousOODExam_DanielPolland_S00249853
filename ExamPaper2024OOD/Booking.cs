@@ -13,9 +13,13 @@ namespace ExamPaper2024OOD
         public int NumberOfParticipants { get; set; }
         public virtual Customer Customer { get; set; }
 
+
         public override string ToString()
         {
-            return $"{Customer.Name} ({Customer.ContactNumber}) - Party of {NumberOfParticipants}";
+            return string.Format("{0} ({1}) - Party of {2}", Customer.Name, Customer.ContactNumber, NumberOfParticipants);
         }
+        
+
     }
+
 }

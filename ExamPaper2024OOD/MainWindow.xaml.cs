@@ -35,10 +35,17 @@ namespace ExamPaper2024OOD
          
             db = new RestaurantData();
 
-            var query = from Booking b in db.Bookings
-                        where b.BookingsDate == dbxShow.DisplayDate
-                        select b;
-            
+            //var query = from Booking b in db.Bookings
+            //            where b.BookingsDate == dbxShow.DisplayDate
+            //            select new BookingSummary
+            //            { 
+            //            NumberOfParticipants = b.NumberOfParticipants,
+            //            Customer = b.Customer,
+            //            };
+
+            var query = db.Bookings;
+
+            var results = query.ToList();
             lbxBookings.ItemsSource = query.ToList();
 
             Bookings = db.Bookings.Count();

@@ -68,7 +68,21 @@
     <Compile Include="MakeBook.xaml.cs">
       <DependentUpon>MakeBook.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504020907458_InitialCreate.cs" />
+    <Compile Include="Migrations\202504020907458_InitialCreate.Designer.cs">
+      <DependentUpon>202504020907458_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504021104145_AddedSummaryClasses.cs" />
+    <Compile Include="Migrations\202504021104145_AddedSummaryClasses.Designer.cs">
+      <DependentUpon>202504021104145_AddedSummaryClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504021115163_RemovedSummaryClasses.cs" />
+    <Compile Include="Migrations\202504021115163_RemovedSummaryClasses.Designer.cs">
+      <DependentUpon>202504021115163_RemovedSummaryClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RestaurantData.cs" />
+    <Compile Include="Summaries.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,6 +116,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202504020907458_InitialCreate.resx">
+      <DependentUpon>202504020907458_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504021104145_AddedSummaryClasses.resx">
+      <DependentUpon>202504021104145_AddedSummaryClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504021115163_RemovedSummaryClasses.resx">
+      <DependentUpon>202504021115163_RemovedSummaryClasses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

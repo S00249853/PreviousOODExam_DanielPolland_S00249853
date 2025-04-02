@@ -31,11 +31,17 @@ namespace ExamPaper2024OOD
 
             db = new RestaurantData();
 
-            var query = from Customer in db.Customers
-                        where Customer.Name.Contains(name)
-                        select Customer;
+            //var query = from Customer in db.Customers
+            //            where Customer.Name.Contains(name)
+            //            select new CustomerSummary
+            //            {
+            //            Name = Customer.Name,
+            //            ContactNumber = Customer.ContactNumber,
+            //            };
 
-            lbxCustomers.ItemsSource = query.ToList();
+            var bookings = db.Bookings;
+
+            lbxCustomers.ItemsSource = bookings.ToList();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
