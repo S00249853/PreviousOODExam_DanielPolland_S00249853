@@ -43,11 +43,6 @@ namespace ExamPaper2024OOD
             //            Customer = b.Customer,
             //            };
 
-            var query = db.Bookings;
-
-            var results = query.ToList();
-            lbxBookings.ItemsSource = query.ToList();
-
             Bookings = db.Bookings.Count();
             Avaliable = Capacity - Bookings;
         }
@@ -62,15 +57,57 @@ namespace ExamPaper2024OOD
         private void bttnSearch_Click(object sender, RoutedEventArgs e)
         {
            if( int.TryParse(tbxCustomerNo.Text, out no))
-            if (dbxMake.DisplayDate != null  )
+            if (dbxMake.SelectedDate != null  )
             {
                 MakeBook book = new MakeBook();
                 book.Owner = this;
                 name = tbxCustomerName.Text;
                 contact = tbxCustomerContact.Text;
-                date = dbxMake.DisplayDate;
+                date = dbxMake.SelectedDate.Value;
                 book.ShowDialog();
             }
+        }
+
+        private void dbxShow_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+                 var query = db.Bookings;
+
+            var results = from booking in query
+                          where booking.BookingsDate == dbxShow.SelectedDate
+                          select booking;
+            lbxBookings.ItemsSource = results.ToList();
+        }
+
+        private void bttnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Booking book = lbxBookings.SelectedItem as Booking;
+            db.Bookings.Remove(book);
+            db.SaveChanges();
+
+          
+
+            var query = db.Bookings;
+
+            var results = from booking in query
+                          where booking.BookingsDate == dbxShow.SelectedDate
+                          select booking;
+            lbxBookings.ItemsSource = results.ToList();
+
+            Bookings = db.Bookings.Count();
+            Avaliable = Capacity - Bookings;
+        }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            var query = db.Bookings;
+
+            var results = from booking in query
+                          where booking.BookingsDate == dbxShow.SelectedDate
+                          select booking;
+            lbxBookings.ItemsSource = results.ToList();
+
+            Bookings = db.Bookings.Count();
+            Avaliable = Capacity - Bookings;
         }
     }
 }

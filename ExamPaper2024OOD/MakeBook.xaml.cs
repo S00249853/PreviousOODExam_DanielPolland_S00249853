@@ -39,9 +39,7 @@ namespace ExamPaper2024OOD
             //            ContactNumber = Customer.ContactNumber,
             //            };
 
-            var bookings = db.Bookings;
-
-            lbxCustomers.ItemsSource = bookings.ToList();
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -55,23 +53,37 @@ namespace ExamPaper2024OOD
             tblkNo.Text = $"Number of customers - {no}";
             tbxName.Text = name;
             tbxContact.Text = contact;
+
+            var query = db.Customers;
+            var results = from customer in query
+                          where customer.Name == name
+                          select customer;
+            lbxCustomers.ItemsSource = results.ToList();
         }
 
         private void bttnCreate_Click(object sender, RoutedEventArgs e)
         {
+            bool check = false;
             foreach (var c in db.Customers)
             {
                 if (c.Name == tbxName.Text && c.ContactNumber == tbxContact.Text)
                 {
                     db.Bookings.Add(new Booking() { BookingsDate = date, NumberOfParticipants = no, Customer = c });
-
+                   
                     this.Close();
+                    check = true;
+                    break;
                 }
             }
-            customer = new Customer() { Name = tbxName.Text, ContactNumber = tbxContact.Text };
-            db.Customers.Add(customer);
-            db.Bookings.Add(new Booking() { BookingsDate = date, NumberOfParticipants = no, Customer = customer });
-            this.Close();
+            if (check == false)
+            {
+                customer = new Customer() { Name = tbxName.Text, ContactNumber = tbxContact.Text };
+                db.Customers.Add(customer);
+                db.Bookings.Add(new Booking() { BookingsDate = date, NumberOfParticipants = no, Customer = customer });
+        
+                this.Close();
+            }
+            db.SaveChanges();
         }
 
         private void lbxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)

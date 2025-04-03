@@ -13,6 +13,11 @@ namespace ExamPaper2024OOD
         public string ContactNumber { get; set; }
         public virtual List<Booking> Bookings { get; set; }
 
+        public override string ToString()
+        {
+            return string.Format("{0} {1}", Name, ContactNumber);
+        }
+
     }
 
 

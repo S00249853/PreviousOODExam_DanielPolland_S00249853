@@ -6,9 +6,14 @@
         xmlns:local="clr-namespace:ExamPaper2024OOD"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" StateChanged="Window_StateChanged">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Booking Details" VerticalAlignment="Top" Height="51" Width="253" FontSize="35" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="619*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Booking Details" VerticalAlignment="Top" Height="51" Width="253" FontSize="35" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,18 +23,18 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <DatePicker x:Name="dbxShow" HorizontalAlignment="Left" Margin="281,24,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxBookings" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,68,279,99"/>
-        <TextBlock HorizontalAlignment="Left" Margin="533,10,0,0" TextWrapping="Wrap" Text="New Booking" VerticalAlignment="Top" FontSize="30"/>
-        <DatePicker x:Name="dbxMake" HorizontalAlignment="Left" Margin="571,81,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbxCustomerNo" HorizontalAlignment="Left" Margin="571,128,0,0" TextWrapping="Wrap" Text="Number of Customers" VerticalAlignment="Top" Width="139"/>
-        <TextBox x:Name="tbxCustomerName" HorizontalAlignment="Left" Margin="571,169,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Width="139"/>
-        <TextBox x:Name="tbxCustomerContact" HorizontalAlignment="Left" Margin="571,0,0,0" TextWrapping="Wrap" Text="Contact Number" VerticalAlignment="Center" Width="139"/>
-        <Button x:Name="bttnSearch" Content="Customer Search" HorizontalAlignment="Left" Margin="602,251,0,0" VerticalAlignment="Top" Width="142" Click="bttnSearch_Click"/>
-        <Button x:Name="bttnDelete" Content="Delete Booking" HorizontalAlignment="Left" Margin="388,372,0,0" VerticalAlignment="Top" Width="121"/>
-        <TextBlock x:Name="tblkCapacity" HorizontalAlignment="Left" Margin="22,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tblkBookings" HorizontalAlignment="Left" Margin="137,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tblkAvaliable" HorizontalAlignment="Left" Margin="266,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dbxShow" HorizontalAlignment="Left" Margin="100,24,0,0" VerticalAlignment="Top" SelectedDateChanged="dbxShow_SelectedDateChanged" Grid.Column="2"/>
+        <ListBox x:Name="lbxBookings" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,68,279,99" Grid.ColumnSpan="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="352,10,0,0" TextWrapping="Wrap" Text="New Booking" VerticalAlignment="Top" FontSize="30" Grid.Column="2"/>
+        <DatePicker x:Name="dbxMake" HorizontalAlignment="Left" Margin="390,81,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <TextBox x:Name="tbxCustomerNo" HorizontalAlignment="Left" Margin="390,128,0,0" TextWrapping="Wrap" Text="Number of Customers" VerticalAlignment="Top" Width="139" Grid.Column="2"/>
+        <TextBox x:Name="tbxCustomerName" HorizontalAlignment="Left" Margin="390,169,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Width="139" Grid.Column="2"/>
+        <TextBox x:Name="tbxCustomerContact" HorizontalAlignment="Left" Margin="390,0,0,0" TextWrapping="Wrap" Text="Contact Number" VerticalAlignment="Center" Width="139" Grid.Column="2"/>
+        <Button x:Name="bttnSearch" Content="Customer Search" HorizontalAlignment="Left" Margin="421,251,0,0" VerticalAlignment="Top" Width="142" Click="bttnSearch_Click" Grid.Column="2"/>
+        <Button x:Name="bttnDelete" Content="Delete Booking" HorizontalAlignment="Left" Margin="207,372,0,0" VerticalAlignment="Top" Width="121" Click="bttnDelete_Click" Grid.Column="2"/>
+        <TextBlock x:Name="tblkCapacity" HorizontalAlignment="Left" Margin="22,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="tblkBookings" HorizontalAlignment="Left" Margin="81,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="tblkAvaliable" HorizontalAlignment="Left" Margin="85,374,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Grid.Column="2"/>
 
     </Grid>
 </Window>
